@@ -22,31 +22,117 @@ const { title } = Astro.props;
 	</body>
 </html>
 <style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-		background-size: 224px;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
+html,
+body {
+  background-color: #121212;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+}
+text {
+	font-family:
+		Menlo,
+		Monaco,
+		Lucida Console,
+		Liberation Mono,
+		DejaVu Sans Mono,
+		Bitstream Vera Sans Mono,
+		Courier New,
+		monospace;
+  text-align: center;
+  stroke-width: 4px;
+  stroke-dasharray: 80;
+  fill: rgba(0,0,0,0);
+  stroke-linecap: round;
+  animation: follow 1.8s linear infinite;
+  transition: all 2.1s;
+}
+text:hover {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 0;
+  stroke-width: 6px;
+}
+@media (max-width: 1200px) {
+  svg,
+  text {
+    transform: scale(0.45);
+    margin-left: -10px;
+  }
+  p {
+    font-size: 12px;
+    bottom: 50px;
+  }
+}
+@-moz-keyframes follow {
+  0% {
+    stroke-dashoffset: 0;
+    stroke: #883aea;
+    filter: drop-shadow(0px 0px 5px #ff69b4);
+  }
+  50% {
+    stroke: #87ceeb;
+    filter: drop-shadow(0px 0px 5px #87ceeb);
+  }
+  100% {
+    stroke-dashoffset: 160;
+    stroke: #ff69b4;
+    filter: drop-shadow(0px 0px 5px #ff69b4);
+  }
+}
+@-webkit-keyframes follow {
+  0% {
+    stroke-dashoffset: 0;
+    stroke: #883aea;
+    filter: drop-shadow(0px 0px 5px #ff69b4);
+  }
+  50% {
+    stroke: #87ceeb;
+    filter: drop-shadow(0px 0px 5px #87ceeb);
+  }
+  100% {
+    stroke-dashoffset: 160;
+    stroke: #ff69b4;
+    filter: drop-shadow(0px 0px 5px #ff69b4);
+  }
+}
+@-o-keyframes follow {
+  0% {
+    stroke-dashoffset: 0;
+    stroke: #883aea;
+    filter: drop-shadow(0px 0px 5px #ff69b4);
+  }
+  50% {
+    stroke: #87ceeb;
+    filter: drop-shadow(0px 0px 5px #87ceeb);
+  }
+  100% {
+    stroke-dashoffset: 160;
+    stroke: #ff69b4;
+    filter: drop-shadow(0px 0px 5px #ff69b4);
+  }
+}
+@keyframes follow {
+  0% {
+    stroke-dashoffset: 0;
+    stroke: #883aea;
+    filter: drop-shadow(0px 0px 5px #ff69b4);
+  }
+  50% {
+    stroke: #87ceeb;
+    filter: drop-shadow(0px 0px 5px #87ceeb);
+  }
+  100% {
+    stroke-dashoffset: 160;
+    stroke: #ff69b4;
+    filter: drop-shadow(0px 0px 5px #ff69b4);
+  }
+}
+text::selection {
+  color: white;
+  background-color: black;
+}
 </style>

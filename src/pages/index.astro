@@ -25,6 +25,11 @@ import Layout from '../layouts/Layout.astro';
 		margin-bottom: 1em;
 	}
 
+/*** Works on common browsers ***/
+h1::selection, h1 span::selection {
+  color: white;
+  background-color: black;
+}
 	@media only screen and (max-width: 600px) {
 		h1 {
     font-size: 4rem;

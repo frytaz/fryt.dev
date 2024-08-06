@@ -1,1 +1,1 @@
-# fryt.dev
+# [fryt.dev](https://fryt.dev)
